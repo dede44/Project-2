@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title>Distributors</title>
+    </head>
+    <body>
+        <h1>Distributors</h1>
+        <a href="/distr/add">Add New Distributor</a> <br />
+
+        <br />
+
+        <table border="1">
+            <tr><th>Distributor Name</th><th>Actions</th></tr>
+            <% for(var i=0; result.length > i; i++ ) { %>
+            <tr>
+                <td><a href="/distr/?distr_id=<%= result[i].distr_id %>"><%= result[i].distr_name %></a></td>
+
+
+                <td><form action="/distr/delete/">
+                        <input type="hidden" name="distr_id" id="distr_id" value="<%= result[i].distr_id %>" />
+                        <input type="submit" value="Delete"/>
+                        <button onclick="event.preventDefault();window.location.href='/distr/edit2/?distr_id=<%= result[i].distr_id %>'">Edit</button>
+                    </form>
+
+                </td>
+
+
+            </tr>
+            <% } %>
+        </table>
+    </body>
+
+</html>

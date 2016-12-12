@@ -4,24 +4,17 @@ var db  = require('./db_connection.js');
 /* DATABASE CONFIGURATION */
 var connection = mysql.createConnection(db.config);
 
-/*
- create or replace view school_view as
- select s.*, a.street, a.zipcode from school s
- join address a on a.address_id = s.address_id;
-
- */
-
 exports.getAll = function(callback) {
-    var query = 'SELECT * FROM school_view;';
+    var query = 'SELECT * FROM customers;';
 
     connection.query(query, function(err, result) {
         callback(err, result);
     });
 };
 
-exports.getById = function(school_id, callback) {
-    var query = 'SELECT * FROM school_view WHERE school_id = ?';
-    var queryData = [school_id];
+exports.getById = function(customer_id, callback) {
+    var query = 'SELECT * FROM customers WHERE customer_id = ?';
+    var queryData = [customer_id];
 
     connection.query(query, queryData, function(err, result) {
         callback(err, result);
@@ -29,11 +22,11 @@ exports.getById = function(school_id, callback) {
 };
 
 exports.insert = function(params, callback) {
-    var query = 'INSERT INTO school (school_name, address_id) VALUES (?, ?)';
+    var query = 'INSERT INTO customers (phone_number, first_name) VALUES (?, ?)';
 
     // the question marks in the sql query above will be replaced by the values of the
     // the data in queryData
-    var queryData = [params.school_name, params.address_id];
+    var queryData = [params.phone_number, params.first_name];
 
     connection.query(query, queryData, function(err, result) {
         callback(err, result);
@@ -41,9 +34,9 @@ exports.insert = function(params, callback) {
 
 }
 
-exports.delete = function(school_id, callback) {
-    var query = 'DELETE FROM school WHERE school_id = ?';
-    var queryData = [school_id];
+exports.delete = function(customer_id, callback) {
+    var query = 'DELETE FROM customers WHERE customer_id = ?';
+    var queryData = [customer_id];
 
     connection.query(query, queryData, function(err, result) {
         callback(err, result);
@@ -52,8 +45,8 @@ exports.delete = function(school_id, callback) {
 };
 
 exports.update = function(params, callback) {
-    var query = 'UPDATE school SET school_name = ?, address_id = ? WHERE school_id = ?';
-    var queryData = [params.school_name, params.address_id, params.school_id];
+    var query = 'UPDATE customers SET phone_number = ?, first_name = ? WHERE customer_id = ?';
+    var queryData = [params.phone_number, params.first_name];
 
     connection.query(query, queryData, function(err, result) {
         callback(err, result);

@@ -1,0 +1,20 @@
+<html>
+<head>
+    <title>Update <%= distr.distr_name%></title>
+</head>
+<body>
+<h1>Update <%= distr.distr_name%></h1>
+<form action="/distr/edit2" method="get">
+    <input type="hidden" id="distr_id" name="distr_id" value="<%= distr.distr_id %>">
+    Distributor Name: <input id="distr_name" name="distr_name" type="text" value="<%= distr.distr_name%>"/>
+    <br />
+
+    <br />
+
+    <input type="submit" />
+
+
+</form>
+</body>
+
+</html>

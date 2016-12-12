@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title>Suppliers</title>
+    </head>
+    <body>
+        <h1>Suppliers</h1>
+        <a href="/supplier/add">Add New Supplier</a> <br />
+
+        <br />
+
+        <table border="1">
+            <tr><th>Name</th><th>City</th></tr>
+            <% for(var i=0; result.length > i; i++ ) { %>
+            <tr>
+                <td><a href="/supplier/?supplier_id=<%= result[i].supplier_id %>"><%= result[i].supplier_name %></a></td>
+                <td><%= result[i].city %></td>
+
+                <td>
+                    <button onclick="event.preventDefault();window.location.href='/supplier/edit2/?supplier_id=<%= result[i].supplier_id %>'">Edit</button>
+                    <form action="/supplier/delete/">
+                        <input type="hidden" name="supplier_id" id="supplier_id" value="<%= result[i].supplier_id %>" />
+                        <input type="submit" value="Delete"/>
+
+                    </form>
+                </td>
+
+            </tr>
+            <% } %>
+        </table>
+    </body>
+
+</html>

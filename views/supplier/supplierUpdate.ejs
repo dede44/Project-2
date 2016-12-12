@@ -1,0 +1,21 @@
+<html>
+<head>
+    <title>Update <%= supplier.supplier_name%></title>
+</head>
+<body>
+<h1>Update <%= supplier.supplier_name%></h1>
+<form action="/supplier/edit2" method="get">
+    <input type="hidden" id="supplier_id" name="supplier_id" value="<%= supplier.supplier_id %>">
+    City: <input id="cityr" name="city" type="text" value="<%= supplier.city%>"/>
+    Name: <input id="supplier_name" name="supplier_name" type="text" value="<%= supplier.supplier_name%>"/>
+    <br />
+
+    <br />
+
+    <input type="submit" />
+
+
+</form>
+</body>
+
+</html>

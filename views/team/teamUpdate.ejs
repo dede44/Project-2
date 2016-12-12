@@ -1,0 +1,20 @@
+<html>
+<head>
+    <title>Update <%= team.team_name%></title>
+</head>
+<body>
+<h1>Update <%= team.team_name%></h1>
+<form action="/team/edit2" method="get">
+    <input type="hidden" id="team_id" name="team_id" value="<%= team.team_id %>">
+    Team Name: <input id="team_name" name="team_name" type="text" value="<%= team.team_name%>"/>
+    <br />
+
+    <br />
+
+    <input type="submit" />
+
+
+</form>
+</body>
+
+</html>
