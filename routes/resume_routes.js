@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var resume_dal = require('../model/resume_dal');
-var account_dal = require('../model/account_dal');
+var team_dal = require('../model/team_dal');
 
 
 // View All resumes
