@@ -4,7 +4,7 @@
 </head>
 <body>
 <h1>Update <%= team.team_name%></h1>
-<form action="/team/edit2" method="get">
+<form action="/team/update" method="get">
     <input type="hidden" id="team_id" name="team_id" value="<%= team.team_id %>">
     Team Name: <input id="team_name" name="team_name" type="text" value="<%= team.team_name%>"/>
     <br />

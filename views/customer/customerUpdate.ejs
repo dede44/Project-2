@@ -4,7 +4,7 @@
 </head>
 <body>
 <h1>Update <%= customer.customer_name%></h1>
-<form action="/customer/edit2" method="get">
+<form action="/customer/update" method="get">
     <input type="hidden" id="customer_id" name="customer_id" value="<%= customer.customer_id %>">
     Name: <input id="first_name" name="first_name" type="text" value="<%= customer.first_name%>"/>
     Phone Number: <input id="phone_number" name="phone_number" type="text" value="<%= customer.phone_number%>"/>

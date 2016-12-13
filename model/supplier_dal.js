@@ -46,7 +46,7 @@ exports.delete = function(supplier_id, callback) {
 
 exports.update = function(params, callback) {
     var query = 'UPDATE supplier SET city = ?, supplier_name = ? WHERE supplier_id = ?';
-    var queryData = [params.city, params.supplier_name];
+    var queryData = [params.city, params.supplier_name, params.supplier_id];
 
     connection.query(query, queryData, function(err, result) {
         callback(err, result);

@@ -9,7 +9,7 @@
     <br />
 
     <table border="1">
-            <tr><th>Team Name</th></tr>
+            <tr><th>Team Name</th><th>Actions</th></tr>
             <% for(var i=0; result.length > i; i++ ) { %>
             <tr>
                 <td><a href="/team/?team_id=<%= result[i].team_id%>"><%= result[i].team_name%></a></td>

@@ -46,7 +46,7 @@ exports.delete = function(customer_id, callback) {
 
 exports.update = function(params, callback) {
     var query = 'UPDATE customers SET phone_number = ?, first_name = ? WHERE customer_id = ?';
-    var queryData = [params.phone_number, params.first_name];
+    var queryData = [params.phone_number, params.first_name, params.customer_id];
 
     connection.query(query, queryData, function(err, result) {
         callback(err, result);

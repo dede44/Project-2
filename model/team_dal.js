@@ -47,9 +47,10 @@ exports.delete = function(team_id, callback) {
 
 exports.update = function(params, callback) {
     var query = 'UPDATE teams SET team_name = ? WHERE team_id = ?';
-    var queryData = [params.team_name];
+    var queryData = [params.team_name, params.team_id];
 
     connection.query(query, queryData, function(err, result) {
         callback(err, result);
     });
 };
+

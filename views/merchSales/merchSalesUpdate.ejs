@@ -1,0 +1,21 @@
+<html>
+<head>
+    <title>Update <%= merchSales.order_number%></title>
+</head>
+<body>
+<h1>Update <%= merchSales.order_number%></h1>
+<form action="/merchSales/update" method="get">
+    <input type="hidden" id="order_number" name="order_number" value="<%= merchSales.order_number %>">
+    Sale Date: <input id="sale_date" name="sale_date" type="text" value="<%= merchSales.sale_date%>"/>
+    Distributor Name: <input id="distr_name" name="distr_name" type="text" value="<%= .merchSales_distr_name%>"/>
+    <br />
+
+    <br />
+
+    <input type="submit" />
+
+
+</form>
+</body>
+
+</html>

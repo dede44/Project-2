@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>Merchandise Sales</title>
+    </head>
+    <body>
+        <h1>Merchandise Sales</h1>
+        <a href="/merchSales/add">Add A New Merchandise Sale</a> <br />
+        <br />
+
+        <table border="1">
+            <tr><th>Order Number</th><th>Sale Date</th> <th>Distributor</th><th>Actions</th></tr>
+            <% for(var i=0; result.length > i; i++ ) { %>
+            <tr>
+                <td><a href="/merchSales/?order_number=<%= result[i].order_number %>"><%= result[i].sale_date %></a></td>
+                <td><%= result[i].distr_name %></td>
+
+                <td>
+                    <button onclick="event.preventDefault();window.location.href='/merchSales/edit2/?order_number=<%= result[i].order_number %>'">Edit</button>
+                    <form action="/merchSales/delete/">
+                        <input type="hidden" name="order_number" id="order_number" value="<%= result[i].order_number %>" />
+                        <input type="submit" value="Delete"/>
+                    </form>
+                </td>
+            </tr>
+            <% } %>
+        </table>
+    </body>
+
+</html>

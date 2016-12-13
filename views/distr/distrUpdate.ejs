@@ -4,7 +4,7 @@
 </head>
 <body>
 <h1>Update <%= distr.distr_name%></h1>
-<form action="/distr/edit2" method="get">
+<form action="/distr/update" method="get">
     <input type="hidden" id="distr_id" name="distr_id" value="<%= distr.distr_id %>">
     Distributor Name: <input id="distr_name" name="distr_name" type="text" value="<%= distr.distr_name%>"/>
     <br />

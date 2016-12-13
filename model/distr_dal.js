@@ -52,11 +52,3 @@ exports.update = function(params, callback) {
     });
 };
 
-exports.update = function(params, callback) {
-    var query = 'UPDATE distributor SET distr_name = ? WHERE distr_id = ?';
-    var queryData = [params.distr_name];
-
-    connection.query(query, queryData, function(err, result) {
-        callback(err, result);
-    });
-};
