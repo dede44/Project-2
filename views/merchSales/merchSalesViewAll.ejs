@@ -7,12 +7,13 @@
         <a href="/merchSales/add">Add A New Merchandise Sale</a> <br />
         <br />
 
-        <table border="1">
-            <tr><th>Order Number</th><th>Sale Date</th> <th>Distributor</th><th>Actions</th></tr>
+        <table border=4>
+            <tr><th>Order Number</th><th>Customer</th> <th>Distributor</th><th>Order Total</th><th>Actions</th></tr>
             <% for(var i=0; result.length > i; i++ ) { %>
             <tr>
-                <td><a href="/merchSales/?order_number=<%= result[i].order_number %>"><%= result[i].sale_date %></a></td>
-                <td><%= result[i].distr_name %></td>
+                <td><a href="/merchSales/?order_number=<%= result[i].order_number %>"><%= result[i].order_number%></a></td>
+                <td><%=result[i].first_name%></td> <td><%= result[i].distr_name %> </td>
+                <td>$<%= result[i].price %></td>
 
                 <td>
                     <button onclick="event.preventDefault();window.location.href='/merchSales/edit2/?order_number=<%= result[i].order_number %>'">Edit</button>

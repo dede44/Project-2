@@ -1,0 +1,29 @@
+<html>
+<head>
+    <title>Team Store</title>
+</head>
+<body>
+<h1>Team Store</h1>
+<a href="/teamstore/add">Add New Team Store</a> <br />
+
+<br />
+
+<table border="4">
+    <tr><th>City</th><th>Actions</th></tr>
+    <% for(var i=0; result.length > i; i++ ) { %>
+    <tr>
+        <td><a href="/teamstore/?teamstore_id=<%= result[i].teamstore_id %>"><%= result[i].city %></a></td>
+
+        <td><button onclick="event.preventDefault();window.location.href='/school/edit2/?school_id=<%= result[i].school_id %>'">Edit</button>
+        <form action="/teamstore/delete/" style="display:inline;">
+            <input type="hidden" name="teamstore_id" id="teamstore_id" value="<%= result[i].teamstore_id %>" />
+            <input type="submit" value="Delete"/>
+        </form>
+
+        </td>
+    </tr>
+    <% } %>
+</table>
+</body>
+
+</html>

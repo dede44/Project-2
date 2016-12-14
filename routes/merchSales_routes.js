@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var merchSales_dal = require('../model/merchSales_dal');
-var team_dal = require('../model/team_dal');
+//var team_dal = require('../model/team_dal');
 
 
 // View All merchSales
@@ -20,7 +20,7 @@ router.get('/all', function(req, res) {
 // View the merchSales for the given id
 router.get('/', function(req, res){
     if(req.query.order_number == null) {
-        res.send('number_order is null');
+        res.send('order_number is null');
     }
     else {
         merchSales_dal.getById(req.query.order_number, function(err,result) {
@@ -47,18 +47,21 @@ router.get('/add', function(req, res){
     });
 });
 
-// insert a resume record
+// insert a merchSale record
 router.get('/insert', function(req, res){
     // simple validation
-    if(req.query.resume_name == null) {
-        res.send('Resume Name must be provided.');
+    if(req.query.sale_date == null) {
+        res.send('Sale date must be provided.');
     }
-    else if(req.query.account_id == null) {
-        res.send('An Account must be selected');
+    else if(req.query.distr_name == null) {
+        res.send('A distributor must be selected');
+    }
+    else if(req.query.customer_id == null) {
+        res.send('A customer must be selected');
     }
     else {
         // passing all the query parameters (req.query) to the insert function instead of each individually
-        resume_dal.insert(req.query, function(err,result) {
+        merchSales_dal.insert(req.query, function(err,result) {
             if (err) {
                 res.send(err);
             }
@@ -70,19 +73,19 @@ router.get('/insert', function(req, res){
     }
 });
 
-// Delete a resume for the given resume_id
+// Delete a merchSale for the given order_number
 router.get('/delete', function(req, res){
-    if(req.query.resume_id == null) {
-        res.send('resume_id is null');
+    if(req.query.order_number == null) {
+        res.send('order_number is null');
     }
     else {
-        resume_dal.delete(req.query.resume_id, function(err, result){
+        merchSales_dal.delete(req.query.order_number, function(err, result){
             if(err) {
                 res.send(err);
             }
             else {
                 //poor practice, but we will handle it differently once we start using Ajax
-                res.redirect(302, '/resume/all');
+                res.redirect(302, '/merchSales/all');
             }
         });
     }

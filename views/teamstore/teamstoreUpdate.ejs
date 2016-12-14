@@ -1,0 +1,22 @@
+<html>
+<head>
+    <title>Update <%= teamstore.city%></title>
+</head>
+<body>
+<h1>Update <%= teamstore.city%></h1>
+<form action="/teamstore/update" method="get">
+    <input type="hidden" id="teamstore_id" name="teamstore_id" value="<%= teamstore.teamstore_id %>">
+    City: <input id="city" name="city" type="text" value="<%= teamstore.city%>"/>
+    Distributor: <input id="distr_name" name="distr_name" type="text" value="<%= teamstore.distr_name%>"/>
+    Team: <input id="team_name" name="team_name" type="text" value="<%= teamstore.team_name%>"/>
+    <br />
+
+    <br />
+
+    <input type="submit" />
+
+
+</form>
+</body>
+
+</html>
