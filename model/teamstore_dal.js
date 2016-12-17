@@ -12,7 +12,7 @@ exports.getAll = function(callback) {
     });
 };
 
-exports.getById = function(supplier_id, callback) {
+exports.getById = function(teamstore_id, callback) {
     var query = 'SELECT * FROM teamstore_view WHERE teamstore_id = ?';
     var queryData = [teamstore_id];
 

@@ -5,8 +5,12 @@
 <body>
     <h1>Teams</h1>
     <ul>
-        <li>Team Id: <%= result[0].team_id%></li>
-        <li>Team Name: <%= result[0].team_name %></li>
+
+        <li>Team Name: <%= result[0].team_name%></li>
+        <h4>Players:</h4>
+        <% for(var i=0; result.length > i; i++ ) { %>
+                    <h8> - <%= result[i].player_name %>     </h8>
+        <% } %>
 
 </body>
 

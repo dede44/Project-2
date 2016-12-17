@@ -14,7 +14,7 @@ exports.getAll = function(callback) {
 };
 
 exports.getById = function(team_id, callback) {
-    var query = 'SELECT * FROM teams WHERE team_id = ?';
+    var query = 'SELECT * FROM player_view WHERE team_id = ?';
     var queryData = [team_id];
 
     connection.query(query, queryData, function(err, result) {
