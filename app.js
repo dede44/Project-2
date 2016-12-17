@@ -14,6 +14,7 @@ var customer = require ('./routes/customer_routes');
 var distr = require('./routes/distr_routes');
 var teamstore = require('./routes/teamstore_routes');
 
+
 var app = express();
 
 // view engine setup
@@ -37,6 +38,7 @@ app.use('/supplier', supplier);
 app.use('/customer', customer);
 app.use('/distr', distr);
 app.use('/teamstore', teamstore);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

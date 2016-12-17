@@ -1,30 +1,48 @@
 <html>
-<head>
-    <title>Schools</title>
-</head>
 <body>
-<h1>Schools</h1>
-<a href="/school/add">Add New School</a> <br />
+<h1>------------------------------------------- ABOUT ------------------------------------------------------</h1>
 
-<br />
 
-<table border="1">
-    <tr><th>Name</th><th>Address</th><th>Actions</th></tr>
-    <% for(var i=0; result.length > i; i++ ) { %>
-    <tr>
-        <td><a href="/school/?school_id=<%= result[i].school_id %>"><%= result[i].school_name %></a></td>
-        <td><%= result[i].street %>, <%= result[i].zipcode %></td>
-        <td>
-            <button onclick="event.preventDefault();window.location.href='/school/edit2/?school_id=<%= result[i].school_id %>'">Edit</button>
-            <form action="/school/delete/" style="display:inline;">
-                <input type="hidden" name="school_id" id="school_id" value="<%= result[i].school_id %>" />
-                <input type="submit" value="Delete"/>
-            </form>
-        </td>
-    </tr>
-    <% } %>
-</table>
+<h3> About my Database:</h3>
+<b>The goal of my database is to track NBA merchandise sales. The NBA has a branch that keeps track of what will sale and what has been sold based on what teams are doing well. Merchandise is sold in cities
+    through distributors. The NBA branch keeps track of each team, and which city they are from. The branch has team stores that keep track of individual teams. Teams are made up of different players who can
+    switch teams, but can never play for two teams simultaneously. The branch also keeps track of which players are on what team, as star players are more likely to have higher sales. Customers can buy
+    multiple team merchandise. Distributors place orders based on what is being sold the most, star players, and what is on “popular demand.” The branch keeps track of what is being sold based on what
+    distributors order, what is being sold online, and what team is doing well. Key aspects of the business can be summarized as: Distributors: Places orders and sales merchandise to customers.
+    Customers: Purchase merchandise through distributors based on city, player, or team. City: Has a team made up of players. Players: Have specific jersey numbers; plays for a team and determines if
+    they are a star player. Team Store: Keeps track of specific team based on city.</b>
+
+
+</br>
+
+<h3> About My Company:</h3>
+<b> My company keeps track of NBA sales for different teams. We are working hard to build a
+    fast and reliable database for our marketing team to be efficient in your needs.</b>
+</br>
+</br>
+</br>
+</br>
+</br>
+
+
+<h2>Relational Schema and ER Diagram</h2>
+
+<p style="font-size: 40px; font-style: oblique;"></p>
+<form action="/next" method="post">
+    <img src="/images/ER Diagram.JPG" >
+</form>
+
+<p style="font-size: 40px; font-style: oblique;"></p>
+<form action="/next" method="post">
+    <img src="/images/Relational Schema.jpg" >
+
+</form>
+</br>
+
+
+</br>
+
+
 </body>
 
 </html>
-
